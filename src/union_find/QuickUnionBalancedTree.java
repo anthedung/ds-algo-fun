@@ -24,14 +24,12 @@ class QuickUnionBalancedTree extends QuickUnion {
 
         // if not connected then compare size of the tree
         if (rootA != rootB) {
-            System.out.println(rootA + "-" + size[rootA] + " : " + rootB + "-" + size[rootB]);
             if (size[rootA] < size[rootB]) {
                 UF[rootA] = rootB;
-                size[rootB] = ++size[rootB];
+                size[rootB] = size[rootB] + size[rootA];
             } else {
                 UF[rootB] = rootA;
-                size[rootA] = ++size[rootA];
-
+                size[rootA] = size[rootA] + size[rootB];
             }
         }
     }
