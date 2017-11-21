@@ -10,10 +10,6 @@ class QuickUnion extends UnionFinder {
         super(N);
     }
 
-    QuickUnion(int[] UF) {
-        super(UF);
-    }
-
     @Override
     public void union(int a, int b) {
         if (!connected(a, b)) {

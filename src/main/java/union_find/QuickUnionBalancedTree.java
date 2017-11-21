@@ -9,12 +9,15 @@ package union_find;
 class QuickUnionBalancedTree extends QuickUnion {
     // size to keep track of number of elements each tree from root
     // so that can join the smaller tree to a bigger one
-    int[] size;
+    protected int[] size;
 
     QuickUnionBalancedTree(int N) {
         super(N);
-
         size = new int[N];
+
+        for (int i = 0; i < N; i++) {
+            size[i] = 1;
+        }
     }
 
     @Override

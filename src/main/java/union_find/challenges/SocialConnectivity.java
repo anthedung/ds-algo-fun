@@ -9,7 +9,7 @@ package union_find.challenges;
  * The running time of your algorithm should be mlogn or better and use extra space proportional to n.
  */
 public class SocialConnectivity {
-    int N = 8;
+    int N = 8; // sample based on prepareTestRelData()
     int[] friendIds = new int[N];
     int[] sz = new int[N];
 
@@ -72,7 +72,7 @@ public class SocialConnectivity {
 
     int root(int a) {
         while (a != friendIds[a]) {
-            friendIds[a] = friendIds[friendIds[a]];
+            friendIds[a] = friendIds[friendIds[a]]; // cut tree by half => rebalancing
 
             a = friendIds[a];
         }
