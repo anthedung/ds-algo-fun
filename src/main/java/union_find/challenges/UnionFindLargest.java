@@ -25,10 +25,7 @@ class UnionFindLargest extends QuickUnionRebalancedTree {
     }
 
     int find(int i) {
-        int l = largest[root(i)];
-        System.out.println(l);
-
-        return l;
+        return largest[root(i)];
     }
 
     @Override
@@ -54,24 +51,5 @@ class UnionFindLargest extends QuickUnionRebalancedTree {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        UnionFindLargest uf = new UnionFindLargest(N);
-
-        uf.union(1, 0);
-        uf.union(4, 1);
-        uf.union(3, 6);
-        uf.union(2, 7);
-        uf.union(3, 2);
-        uf.union(1, 6);
-        uf.union(5, 9);
-        uf.union(5, 9);
-        uf.union(2, 0); // 0,1,3,4,6,2,7 | 8 | 5,9
-
-        uf.find(3);
-        uf.find(2);
-        uf.find(8);
-        uf.find(5);
     }
 }

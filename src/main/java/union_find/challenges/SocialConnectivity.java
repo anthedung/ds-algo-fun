@@ -32,20 +32,7 @@ public class SocialConnectivity {
     }
 
     public static void main(String[] args) {
-        SocialConnectivity s = new SocialConnectivity();
 
-        Relationship[] rel = prepareTestRelData();
-
-        for (Relationship r : rel) {
-            boolean allConnected = s.unionTillMax(r.friendA, r.friendB);
-
-            if (allConnected) {
-                System.out.println("All connected: " + r.timestamp);
-                System.exit(0);
-            }
-        }
-
-        System.out.println("Not all connected");
     }
 
     boolean unionTillMax(int a, int b) {
@@ -78,19 +65,5 @@ public class SocialConnectivity {
         }
 
         return a;
-    }
-
-    static Relationship[] prepareTestRelData() {
-        return new Relationship[]{
-                new Relationship(0, 1, 4),
-                new Relationship(1, 1, 7),
-                new Relationship(2, 4, 0),
-                new Relationship(9, 4, 5),
-                new Relationship(13, 6, 1),
-                new Relationship(25, 5, 3),
-                new Relationship(27, 1, 3),
-                new Relationship(37, 2, 3),
-                new Relationship(47, 5, 3),
-        };
     }
 }

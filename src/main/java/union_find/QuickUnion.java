@@ -29,16 +29,4 @@ class QuickUnion extends UnionFinder {
 
         return i;
     }
-
-//    @Override
-    public void showConnectedComponents() {
-        for (int i = 0; i < UF.length; i++) {
-            System.out.print("[ ");
-            if (i == UF[i]) {
-
-            }
-            System.out.print("]  ||  ");
-        }
-        System.out.println("");
-    }
 }
