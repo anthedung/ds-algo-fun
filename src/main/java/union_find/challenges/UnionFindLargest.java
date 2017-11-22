@@ -1,7 +1,6 @@
 package union_find.challenges;
 
 import union_find.QuickUnionRebalancedTree;
-import union_find.UnionFinder;
 
 /**
  * Union-find with specific canonical element.
@@ -26,7 +25,10 @@ class UnionFindLargest extends QuickUnionRebalancedTree {
     }
 
     int find(int i) {
-        return largest[root(i)];
+        int l = largest[root(i)];
+        System.out.println(l);
+
+        return l;
     }
 
     @Override
@@ -39,15 +41,17 @@ class UnionFindLargest extends QuickUnionRebalancedTree {
             if (size[rootA] < size[rootB]) {
                 UF[rootA] = rootB;
                 size[rootB] = size[rootB] + size[rootA];
+
+                if (largest[rootB] < largest[rootA]) {
+                    largest[rootB] = largest[rootA];
+                }
             } else {
                 UF[rootB] = rootA;
                 size[rootA] = size[rootA] + size[rootB];
-            }
 
-            if (largest[rootA] < largest[rootB]) {
-                largest[rootA] = largest[rootB];
-            } else {
-                largest[rootB] = largest[rootA];
+                if (largest[rootA] < largest[rootB]) {
+                    largest[rootA] = largest[rootB];
+                }
             }
         }
     }
@@ -64,5 +68,10 @@ class UnionFindLargest extends QuickUnionRebalancedTree {
         uf.union(5, 9);
         uf.union(5, 9);
         uf.union(2, 0); // 0,1,3,4,6,2,7 | 8 | 5,9
+
+        uf.find(3);
+        uf.find(2);
+        uf.find(8);
+        uf.find(5);
     }
 }
