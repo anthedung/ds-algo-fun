@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class AdjacencyListGraph implements Graph {
-    private Map<Integer, List<Integer>> adj;
+    private Map<Integer, List<Integer>> adj; //use Set for distinct number of adj
     private final int V;
     private int countE;
 
