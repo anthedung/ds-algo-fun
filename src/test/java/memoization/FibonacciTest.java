@@ -1,6 +1,6 @@
 package memoization;
 
-import dynamic_programming.memoization.Fibonacci;
+import dynamic_programming.Fibonacci;
 import junit.framework.TestCase;
 import org.junit.Test;
 
