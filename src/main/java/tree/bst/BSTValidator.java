@@ -31,11 +31,8 @@ public class BSTValidator {
         List<Integer> inOrder = new ArrayList<>();
         visit(root, inOrder);
 
-        //System.out.println(inOrder.size());
         for (int i = 0; i < inOrder.size() - 1 ; i++) {
-            //System.out.println(inOrder.get(i));
             if (inOrder.get(i) >= inOrder.get(i+1)) {
-                //System.out.println(inOrder.get(i) + ":"+inOrder.get(i));
                 return false;
             }
         }
